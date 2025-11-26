@@ -163,7 +163,6 @@ hr {
 
 .recipe-instructions-list {
   margin-top: 24px;
-  padding-left: 44px;
   line-height: 1.5;
   color: var(--color-stone-600);
 
@@ -181,7 +180,7 @@ hr {
   }
 
   & li {
-    text-indent: -38px;
+    text-indent: -34px;
   }
 }
 
