@@ -45,7 +45,6 @@ p {
 ol,
 ul {
   margin: 0;
-  padding-left: 8px;
   list-style-position: inside;
 }
 
@@ -85,7 +84,6 @@ body {
   font-family: 'Young Serif', serif;
   font-size: 40px;
   font-weight: 400;
-  line-height: 1;
   color: var(--color-stone-900);
 }
 
@@ -109,6 +107,7 @@ body {
 
 .recipe-preparation-list {
   margin-top: 16px;
+  padding-left: 8px;
   line-height: 1.5;
   color: var(--color-stone-600);
 
@@ -120,13 +119,16 @@ body {
     color: var(--color-rose-800);
   }
 
-  & li span {
-    font-weight: 600;
+  & li strong {
     margin-left: 16px;
   }
 }
 
-.recipe-ingredients-title {
+li strong {
+  font-weight: 700;
+}
+
+h2 {
   font-family: 'Young Serif', serif;
   font-size: 28px;
   font-weight: 400;
@@ -135,6 +137,7 @@ body {
 
 .recipe-ingredients-list {
   margin-top: 24px;
+  padding-left: 8px;
   line-height: 1.5;
   color: var(--color-stone-600);
 
@@ -156,4 +159,83 @@ hr {
   border-top: 1px solid var(--color-stone-150);
   width: 100%;
   margin: 0;
+}
+
+.recipe-instructions-list {
+  margin-top: 24px;
+  padding-left: 44px;
+  line-height: 1.5;
+  color: var(--color-stone-600);
+
+  & li {
+    margin-top: 8px;
+  }
+
+  & li::marker {
+    font-weight: 700;
+    color: var(--color-brown-800);
+  }
+
+  & li span {
+    margin-left: 16px;
+  }
+
+  & li {
+    text-indent: -38px;
+  }
+}
+
+.recipe-nutrition {
+  margin-top: 24px;
+  line-height: 1.5;
+  color: var(--color-stone-600);
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.nutrition-table tr {
+  line-height: 1.5;
+}
+
+.nutrition-table tr:not(:last-of-type) {
+  border-bottom: 1px solid var(--color-stone-150);
+}
+
+.nutrition-table td {
+  padding: 12px 0;
+}
+
+.nutrition-table td:first-of-type {
+  color: var(--color-stone-600);
+  padding-left: 32px;
+}
+
+.nutrition-table td:last-of-type {
+  font-weight: 700;
+  color: var(--color-brown-800);
+  padding-right: 32px;
+}
+
+@media (max-width: 375px) {
+  .recipe-card {
+    margin: 0;
+    border-radius: 0;
+    max-width: unset;
+    padding: 32px;
+  }
+
+  .recipe-image {
+    border-radius: 0;
+    margin-top: -32px;
+    width: calc(100% + 64px);
+    margin-left: -32px;
+  }
+
+  .recipe-title {
+    font-size: 36px;
+  }
 }
