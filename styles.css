@@ -76,6 +76,18 @@ body {
   align-items: center;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .recipe-card {
   padding: var(--spacing-400);
   background-color: var(--color-white);
@@ -92,19 +104,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-400);
-  margin-top: var(--spacing-500);
+  margin-block-start: var(--spacing-500);
 }
 
 .recipe-title {
   color: var(--color-stone-900);
   font-family: 'Young Serif', serif;
-  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 2.0115rem + 1.0178vw, 2.5rem);
   font-weight: var(--font-weight-base);
   line-height: 1;
 }
 
 .recipe-description {
-  margin-top: var(--spacing-300);
+  margin-block-start: var(--spacing-300);
 }
 
 .recipe-preparation {
@@ -121,12 +133,12 @@ body {
 }
 
 .recipe-preparation-list {
-  margin-top: var(--spacing-200);
+  margin-block-start: var(--spacing-200);
   padding-left: var(--spacing-100);
 }
 
 .preparation-item {
-  margin-top: var(--spacing-100);
+  margin-block-start: var(--spacing-100);
 
   &::marker {
     color: var(--color-rose-800);
@@ -146,12 +158,12 @@ body {
 }
 
 .recipe-ingredients-list {
-  margin-top: var(--spacing-300);
+  margin-block-start: var(--spacing-300);
   padding-left: var(--spacing-100);
 }
 
 .ingredients-item {
-  margin-top: var(--spacing-100);
+  margin-block-start: var(--spacing-100);
 
   &::marker {
     color: var(--color-brown-800);
@@ -169,11 +181,11 @@ hr {
 
 .recipe-instructions-list {
   padding-inline-start: var(--spacing-500);
-  margin-top: var(--spacing-300);
+  margin-block-start: var(--spacing-300);
 }
 
 .instructions-item {
-  margin-top: var(--spacing-100);
+  margin-block-start: var(--spacing-100);
   text-indent: calc(2.125rem * -1);
 
   &::marker {
@@ -187,22 +199,22 @@ hr {
 }
 
 .recipe-nutrition {
-  margin-top: var(--spacing-300);
+  margin-block-start: var(--spacing-300);
 }
 
 .nutrition-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: var(--spacing-200);
+  margin-block-start: var(--spacing-200);
 }
 
-.nutrition-table tr {
+.nutrition-table tbody tr {
   &:first-of-type td {
-    padding-top: 0;
+    padding-block-start: 0;
   }
 
   &:last-of-type td {
-    padding-bottom: 0;
+    padding-block-end: 0;
   }
 
   &:not(:last-of-type) {
@@ -238,8 +250,10 @@ hr {
     width: 100%;
     height: 18.75rem;
   }
+}
 
-  .recipe-title {
-    font-size: 2.5rem;
+@media (min-width: 90rem) {
+  .recipe-card {
+    max-width: 46rem;
   }
 }
