@@ -134,7 +134,7 @@ body {
 
 .recipe-preparation-list {
   margin-block-start: var(--spacing-200);
-  padding-left: var(--spacing-100);
+  padding-inline-start: var(--spacing-100);
 }
 
 .preparation-item {
@@ -145,7 +145,7 @@ body {
   }
 
   & strong {
-    margin-left: var(--spacing-200);
+    margin-inline-start: var(--spacing-200);
   }
 }
 
@@ -159,7 +159,7 @@ body {
 
 .recipe-ingredients-list {
   margin-block-start: var(--spacing-300);
-  padding-left: var(--spacing-100);
+  padding-inline-start: var(--spacing-100);
 }
 
 .ingredients-item {
@@ -170,7 +170,7 @@ body {
   }
 
   & span {
-    margin-left: var(--spacing-200);
+    margin-inline-start: var(--spacing-200);
   }
 }
 
@@ -194,7 +194,7 @@ hr {
   }
 
   & strong {
-    margin-left: var(--spacing-200);
+    margin-inline-start: var(--spacing-200);
   }
 }
 
@@ -208,6 +208,20 @@ hr {
   margin-block-start: var(--spacing-200);
 }
 
+.nutrition-table td {
+  padding-block: var(--spacing-150);
+
+  &:first-of-type {
+    padding-inline-start: var(--spacing-400);
+  }
+
+  &:last-of-type {
+    padding-inline-end: var(--spacing-400);
+    color: var(--color-brown-800);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
 .nutrition-table tbody tr {
   &:first-of-type td {
     padding-block-start: 0;
@@ -219,20 +233,6 @@ hr {
 
   &:not(:last-of-type) {
     border-bottom: 0.0625rem solid var(--color-stone-150);
-  }
-}
-
-.nutrition-table td {
-  padding-block: var(--spacing-150);
-
-  &:first-of-type {
-    padding-left: var(--spacing-400);
-  }
-
-  &:last-of-type {
-    padding-right: var(--spacing-400);
-    color: var(--color-brown-800);
-    font-weight: var(--font-weight-bold);
   }
 }
 
