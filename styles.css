@@ -41,11 +41,12 @@
   --spacing-300: 1.5rem;
   --spacing-400: 2rem;
   --spacing-500: 2.5rem;
-  --spacing-600: 3rem;
   --spacing-1600: 8rem;
   /* Border radius */
   --radius-base: 0.75rem;
   --radius-lg: 1.5rem;
+  /* Miscellaneous */
+  --height-min: 0.0625rem;
 }
 
 *,
@@ -78,10 +79,10 @@ body {
 
 .visually-hidden {
   position: absolute;
-  width: 0.0625rem;
-  height: 0.0625rem;
+  width: var(--height-min);
+  height: var(--height-min);
   padding: 0;
-  margin: -0.0625rem;
+  margin: calc(var(--height-min) * -1);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -176,7 +177,7 @@ body {
 
 hr {
   border: 0;
-  border-top: 0.0625rem solid var(--color-stone-150);
+  border-top: var(--height-min) solid var(--color-stone-150);
 }
 
 .recipe-instructions-list {
@@ -232,7 +233,7 @@ hr {
   }
 
   &:not(:last-of-type) {
-    border-bottom: 0.0625rem solid var(--color-stone-150);
+    border-bottom: var(--height-min) solid var(--color-stone-150);
   }
 }
 
